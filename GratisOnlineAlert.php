@@ -10,12 +10,14 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace GratisAlert;
+namespace GratisOnlineAlert;
 
 use Thelia\Module\BaseModule;
 
-class GratisAlert extends BaseModule
+class GratisOnlineAlert extends BaseModule
 {
+    const MESSAGE_DOMAIN = 'gratisonlinealert';
+
     /*
      * You may now override BaseModuleInterface methods, such as:
      * install, destroy, preActivation, postActivation, preDeactivation, postDeactivation
