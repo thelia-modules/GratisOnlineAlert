@@ -15,7 +15,8 @@ use Thelia\Core\Template\Element\PropelSearchLoopInterface;
 use Thelia\Core\Template\Loop\Argument\ArgumentCollection;
 use Thelia\Model\ProductQuery;
 
-class GratisLoop extends BaseLoop implements PropelSearchLoopInterface {
+class GratisLoop extends BaseLoop implements PropelSearchLoopInterface
+{
 
     public $countable = true;
 

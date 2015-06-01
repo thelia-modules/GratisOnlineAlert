@@ -18,11 +18,4 @@ class GratisOnlineAlert extends BaseModule
 {
     const MESSAGE_DOMAIN = 'gratisonlinealert';
     const BO_MESSAGE_DOMAIN = 'gratisonlinealert.bo.default';
-
-    /*
-     * You may now override BaseModuleInterface methods, such as:
-     * install, destroy, preActivation, postActivation, preDeactivation, postDeactivation
-     *
-     * Have fun !
-     */
 }

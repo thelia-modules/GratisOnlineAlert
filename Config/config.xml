@@ -5,42 +5,15 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
 
     <loops>
+        <!-- Retrieving free online products -->
         <loop name="gratisonlinealert-gratisloop" class="GratisOnlineAlert\Loop\GratisLoop" />
     </loops>
 
-    <forms>
-        <!--
-        <form name="MyFormName" class="GratisOnlineAlert\Form\MySuperForm" />
-        -->
-    </forms>
-
-    <commands>
-        <!--
-        <command class="GratisOnlineAlert\Command\MySuperCommand" />
-        -->
-    </commands>
-
-    <!--
-    <services>
-
-    </services>
-    -->
-
     <hooks>
+        <!-- Hook displaying the alert -->
         <hook id="gratisonlinealert.hook" class="GratisOnlineAlert\Hook\GratisOnlineHook" scope="request">
             <tag name="hook.event_listener" event="home.top" type="back" method="onHomeTop" />
         </hook>
     </hooks>
 
-    <!--
-    <exports>
-
-    </exports>
-    -->
-
-    <!--
-    <imports>
-
-    </imports>
-    -->
 </config>
