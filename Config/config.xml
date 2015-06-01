@@ -5,20 +5,18 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
 
     <loops>
-        <!-- sample definition
-        <loop name="MySuperLoop" class="GratisAlert\Loop\MySuperLoop" />
-        -->
+        <loop name="gratisonlinealert-gratisloop" class="GratisOnlineAlert\Loop\GratisLoop" />
     </loops>
 
     <forms>
         <!--
-        <form name="MyFormName" class="GratisAlert\Form\MySuperForm" />
+        <form name="MyFormName" class="GratisOnlineAlert\Form\MySuperForm" />
         -->
     </forms>
 
     <commands>
         <!--
-        <command class="GratisAlert\Command\MySuperCommand" />
+        <command class="GratisOnlineAlert\Command\MySuperCommand" />
         -->
     </commands>
 
@@ -29,7 +27,7 @@
     -->
 
     <hooks>
-        <hook id="gratisalert.hook" class="GratisOnlineAlert\Hook\GratisOnlineHook" scope="request">
+        <hook id="gratisonlinealert.hook" class="GratisOnlineAlert\Hook\GratisOnlineHook" scope="request">
             <tag name="hook.event_listener" event="home.top" type="back" method="onHomeTop" />
         </hook>
     </hooks>
