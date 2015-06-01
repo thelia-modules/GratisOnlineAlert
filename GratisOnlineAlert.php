@@ -17,6 +17,7 @@ use Thelia\Module\BaseModule;
 class GratisOnlineAlert extends BaseModule
 {
     const MESSAGE_DOMAIN = 'gratisonlinealert';
+    const BO_MESSAGE_DOMAIN = 'gratisonlinealert.bo.default';
 
     /*
      * You may now override BaseModuleInterface methods, such as:

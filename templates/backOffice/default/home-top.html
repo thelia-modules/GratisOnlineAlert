@@ -1,8 +1,11 @@
 {ifloop rel='gratisonlinealert-gratisloop'}
     <div class="alert alert-warning">
-        The following products are currently free online:<ul>
+        {intl l='gratisonlinealert.intro' d='gratisonlinealert.bo.default'}<ul>
             {loop name='gratisonlinealert-gratisloop' type='gratisonlinealert-gratisloop'}
-                <li>{$PRODUCT_REF}, reference "{$PSE_REF}", for the {$CURRENCY} currency.{if {$PROMO}} Currently in promo.{/if}</li>
+                <li>
+                    {intl l='gratisonlinealert.product %product_ref %pse_ref %currency' d='gratisonlinealert.bo.default' product_ref="$PRODUCT_REF" pse_ref="$PSE_REF" currency="$CURRENCY"}
+                    {if {$PROMO}} {intl l='gratisonlinealert.in_promo' d='gratisonlinealert.bo.default'}{/if}
+                </li>
             {/loop}
         </ul>
     </div>
