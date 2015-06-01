@@ -1,6 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the Thelia package.                                     */
+/*      This file is part of the "GratisOnlineAlert" Thelia 2 module.                */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */

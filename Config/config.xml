@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    This file is part of the "GratisOnlineAlert" Thelia 2 module.
 
+    Copyright (c) OpenStudio
+    email : dev@thelia.net
+    web : http://www.thelia.net
+
+    For the full copyright and license information, please view the LICENSE.txt
+    file that was distributed with this source code.
+-->
 <config xmlns="http://thelia.net/schema/dic/config"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
