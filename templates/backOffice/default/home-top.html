@@ -3,7 +3,8 @@
         {intl l='gratisonlinealert.intro' d='gratisonlinealert.bo.default'}<ul>
             {loop name='gratisonlinealert-gratisloop' type='gratisonlinealert-gratisloop'}
                 <li>
-                    {intl l='gratisonlinealert.product %product_ref %pse_ref %currency' d='gratisonlinealert.bo.default' product_ref="$PRODUCT_REF" pse_ref="$PSE_REF" currency="$CURRENCY"}
+                    {assign var='product_url' value={url path="/admin/products/update?product_id={$PRODUCT_ID}&current_tab=prices"}}
+                    {intl l='gratisonlinealert.product %product_url %product_ref %pse_ref %currency' d='gratisonlinealert.bo.default' product_url="$product_url" product_ref="$PRODUCT_REF" pse_ref="$PSE_REF" currency="$CURRENCY"}
                     {if {$PROMO}} {intl l='gratisonlinealert.in_promo' d='gratisonlinealert.bo.default'}{/if}
                 </li>
             {/loop}

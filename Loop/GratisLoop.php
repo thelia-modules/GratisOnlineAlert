@@ -60,6 +60,7 @@ class GratisLoop extends BaseLoop implements PropelSearchLoopInterface
                 ->condition('online', 'Product.Visible = ?', true)
             ->where(array('online', 'price_cond'), 'and')
             ->select(array(
+                'Product.Id',
                 'Product.Ref',
                 'ProductSaleElements.Ref',
                 'ProductSaleElements.Promo',
@@ -72,10 +73,11 @@ class GratisLoop extends BaseLoop implements PropelSearchLoopInterface
      * Loop results.
      *
      * The loop returns the following results :
-     * - PRODUCT_REF : product reference.
-     * - PSE_REF : product sale element reference.
-     * - PROMO : boolean whose value is true if the pse is in promo, false otherwise.
-     * - CURRENCY : currency code.
+     * - PRODUCT_ID: product ID.
+     * - PRODUCT_REF: product reference.
+     * - PSE_REF: product sale element reference.
+     * - PROMO: boolean whose value is true if the pse is in promo, false otherwise.
+     * - CURRENCY: currency code.
      * @param LoopResult $loopResult Query results
      * @return LoopResult Loop results
      */
@@ -83,6 +85,7 @@ class GratisLoop extends BaseLoop implements PropelSearchLoopInterface
     {
         foreach ($loopResult->getResultDataCollection() as $loopRow) {
             $loopResultRow = new LoopResultRow();
+            $loopResultRow->set('PRODUCT_ID', $loopRow['Product.Id']);
             $loopResultRow->set('PRODUCT_REF', $loopRow['Product.Ref']);
             $loopResultRow->set('PSE_REF', $loopRow['ProductSaleElements.Ref']);
             $loopResultRow->set('PROMO', $loopRow['ProductSaleElements.Promo']);
