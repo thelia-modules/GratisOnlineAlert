@@ -13,7 +13,7 @@
 return array(
     'gratisonlinealert' => array(
         'intro' => 'The following products are currently free online:',
-        'product %product_ref %pse_ref %currency' => '%product_ref, reference "%pse_ref", for the %currency currency.',
+        'product %product_url %product_ref %pse_ref %currency' => '<a href="%product_url">%product_ref</a>, reference "%pse_ref", for the %currency currency.',
         'in_promo' => 'Currently in promo.'
     )
 );
