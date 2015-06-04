@@ -25,7 +25,17 @@ To be warned by the module you just have to activate it. If you want to turn off
 
 The warning is displayed on Thelia's administration console's homepage. 
 
-2. Installation
+2. Options
+---
+
+To select options you have to go in configuration module page.
+
+There are 2 options :
+
+* Stop propagation event for creation and update. ( A product can't be free with this option )
+* Receive a mail when an product is free.
+
+3. Installation
 ---
 
 Install it as a Thelia module by downloading the zip archive and extracting it in ```thelia/local/modules``` or by uploading it with the backoffice (at ```/admin/modules```),

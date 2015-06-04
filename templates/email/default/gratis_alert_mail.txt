@@ -1,0 +1,6 @@
+{default_translation_domain domain='gratisonlinealert.email.default'}
+{default_locale locale={$locale}}
+
+{intl l="The product %title is free" title={$TITLE}}
+{intl l="Link : %link" link={$URL}}
+{intl l="Ref : %ref" link={$REF}}
