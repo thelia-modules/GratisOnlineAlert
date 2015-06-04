@@ -24,7 +24,8 @@ use \GratisOnlineAlert\GratisOnlineAlert;
 /**
  * Class GratisListener
  */
-class GratisListener extends BaseAction implements EventSubscriberInterface {
+class GratisListener extends BaseAction implements EventSubscriberInterface
+{
 
     /**
      * Returns an array of event names this subscriber wants to listen to.
@@ -54,16 +55,12 @@ class GratisListener extends BaseAction implements EventSubscriberInterface {
         );
     }
 
-    public function checkPrice(ProductCreateEvent $event){
-
-       if($event->getBasePrice() == 0){
-
-
-           if(ConfigQuery::read(GratisOnlineAlert::EVENT_STOP_PROPAGATION)){
-               $event->stopPropagation();
-           }
-       }
-
+    public function checkPrice(ProductCreateEvent $event)
+    {
+        if ($event->getBasePrice() == 0) {
+            if (ConfigQuery::read(GratisOnlineAlert::EVENT_STOP_PROPAGATION)) {
+                $event->stopPropagation();
+            }
+        }
     }
-
 }

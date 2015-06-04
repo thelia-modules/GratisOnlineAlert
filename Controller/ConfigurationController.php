@@ -42,8 +42,6 @@ class ConfigurationController extends BaseAdminController
         }
 
         return JsonResponse::create($resp, $code);
-
-
     }
 
     public function toggleAlertConfAction()
@@ -64,7 +62,6 @@ class ConfigurationController extends BaseAdminController
         }
 
         return JsonResponse::create($resp, $code);
-
     }
 
     protected function reverseBool($bool)
