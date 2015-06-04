@@ -1,0 +1,77 @@
+{default_translation_domain domain='gratisonlinealert.bo.default'}
+
+<div class="general-block-decorator">
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed" id="options_list">
+            <thead>
+            <tr>
+                <th class="object-title">
+                    {intl l='Title'}
+                </th>
+                <th class="object-title">
+                    {intl l='Description'}
+                </th>
+                <th class="object-title">
+                    {intl l='Action'}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {intl l="Event Propagation"}
+                </td>
+                <td>
+                    {intl l="Use it to stop create or update product if free"}
+                </td>
+                <td class="actions">
+                <div class="btn-group">
+                    <div class="make-switch switch-small module-activation prop-conf"
+                         data-on="success" data-off="danger"
+                         data-on-label="<i class='glyphicon glyphicon-ok-circle'></i>"
+                         data-off-label="<i class='glyphicon glyphicon-remove-circle'></i>">
+                        <input type="checkbox" {if {config key="gratisonlinealert.stop.propagation"}}checked{/if}>
+                    </div>
+                    <noscript>
+                        {if $ACTIVATE}
+                            <a title="{intl l="Deactivate event propagation"}"
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation"}">{intl l="deactivation"}</a>
+                        {else}
+                            <a title="{intl l="activate event propagation"}"
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation" id=$ID}">{intl l="activation"}</a>
+                        {/if}
+                    </noscript>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {intl l="Mail Alert"}
+                </td>
+                <td>
+                    {intl l="Use it to receive a mail alert"}
+                </td>
+                <td class="actions">
+                    <div class="btn-group">
+                        <div class="make-switch switch-small module-activation mail-conf"
+                             data-on="success" data-off="danger"
+                             data-on-label="<i class='glyphicon glyphicon-ok-circle'></i>"
+                             data-off-label="<i class='glyphicon glyphicon-remove-circle'></i>">
+                            <input type="checkbox" {if {config key="gratisonlinealert.send.mail"}}checked{/if}>
+                        </div>
+                        <noscript>
+                            {if $ACTIVATE}
+                                <a title="{intl l="Deactivate mail alert"}"
+                                   href="{url path="/admin/module/gratisonliealert/togglemail"}">{intl l="deactivation"}</a>
+                            {else}
+                                <a title="{intl l="activate mail alert"}"
+                                   href="{url path="/admin/module/gratisonliealert/togglemail" id=$ID}">{intl l="activation"}</a>
+                            {/if}
+                        </noscript>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
