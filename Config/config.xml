@@ -25,7 +25,8 @@
         </hook>
     </hooks>
     <services>
-        <service id="gratisonlinealert.listener.product" class="GratisOnlineAlert\EventListener\GratisListener">
+        <service id="gratisonlinealert.listener.product" class="GratisOnlineAlert\EventListener\GratisListener" scope="request">
+            <argument type="service" id="mailer"/>
             <tag name="kernel.event_subscriber"/>
         </service>
     </services>
