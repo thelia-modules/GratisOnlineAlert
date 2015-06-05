@@ -95,7 +95,7 @@ class GratisListener extends BaseAction implements EventSubscriberInterface
 
     public function checkPriceStopPropSale(ProductSaleElementUpdateEvent $event)
     {
-        if ($event->getPrice() == 0 && $event->getSalePrice() == 0) {
+        if ($event->getPrice() == 0 || $event->getSalePrice() == 0) {
             if (ConfigQuery::read(GratisOnlineAlert::EVENT_STOP_PROPAGATION)) {
                 $event->stopPropagation();
             }
@@ -104,7 +104,7 @@ class GratisListener extends BaseAction implements EventSubscriberInterface
 
     public function checkPriceSendMailSale(ProductSaleElementUpdateEvent $event)
     {
-        if ($event->getPrice() == 0 && $event->getSalePrice() == 0) {
+        if ($event->getPrice() == 0 || $event->getSalePrice() == 0) {
             if (ConfigQuery::read(GratisOnlineAlert::EVENT_SEND_MAIL)) {
                 $product = $event->getProduct();
                 if ($product) {
