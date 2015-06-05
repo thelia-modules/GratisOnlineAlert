@@ -15,6 +15,7 @@ namespace GratisOnlineAlert\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Thelia\Action\BaseAction;
 use Thelia\Core\Event\Product\ProductCreateEvent;
+use Thelia\Core\Event\ProductSaleElement\ProductSaleElementUpdateEvent;
 use Thelia\Core\Event\TheliaEvents;
 use Thelia\Model\ConfigQuery;
 use \GratisOnlineAlert\GratisOnlineAlert;
@@ -60,7 +61,9 @@ class GratisListener extends BaseAction implements EventSubscriberInterface
     {
         return array(
             TheliaEvents::PRODUCT_CREATE => [["checkPriceStopProp", 255], ["checkPriceSendMail", 30]],
-            TheliaEvents::PRODUCT_UPDATE => [["checkPriceStopProp", 255], ["checkPriceSendMail", 30]]
+            TheliaEvents::PRODUCT_UPDATE => [["checkPriceStopProp", 255], ["checkPriceSendMail", 30]],
+            TheliaEvents::PRODUCT_ADD_PRODUCT_SALE_ELEMENT => [["checkPriceStopPropSale", 255], ["checkPriceSendMailSale", 30]],
+            TheliaEvents::PRODUCT_UPDATE_PRODUCT_SALE_ELEMENT => [["checkPriceStopPropSale", 255], ["checkPriceSendMailSale", 30]],
         );
     }
 
@@ -76,6 +79,32 @@ class GratisListener extends BaseAction implements EventSubscriberInterface
     public function checkPriceSendMail(ProductCreateEvent $event)
     {
         if ($event->getBasePrice() == 0) {
+            if (ConfigQuery::read(GratisOnlineAlert::EVENT_SEND_MAIL)) {
+                $product = $event->getProduct();
+                if ($product) {
+                    $this->mailer->sendEmailToShopManagers(GratisOnlineAlert::MAIL_CODE,
+                        [
+                            "REF" => $product->getRef(),
+                            "URL" => $product->getUrl(),
+                            "TITLE" => $product->getTitle()
+                        ]);
+                }
+            }
+        }
+    }
+
+    public function checkPriceStopPropSale(ProductSaleElementUpdateEvent $event)
+    {
+        if ($event->getPrice() == 0 && $event->getSalePrice() == 0) {
+            if (ConfigQuery::read(GratisOnlineAlert::EVENT_STOP_PROPAGATION)) {
+                $event->stopPropagation();
+            }
+        }
+    }
+
+    public function checkPriceSendMailSale(ProductSaleElementUpdateEvent $event)
+    {
+        if ($event->getPrice() == 0 && $event->getSalePrice() == 0) {
             if (ConfigQuery::read(GratisOnlineAlert::EVENT_SEND_MAIL)) {
                 $product = $event->getProduct();
                 if ($product) {
