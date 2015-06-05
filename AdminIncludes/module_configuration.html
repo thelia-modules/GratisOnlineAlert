@@ -6,23 +6,23 @@
             <thead>
             <tr>
                 <th class="object-title">
-                    {intl l='Title'}
+                    {intl l='gratisonlinealert.admin.title'}
                 </th>
                 <th class="object-title">
-                    {intl l='Description'}
+                    {intl l='gratisonlinealert.admin.description'}
                 </th>
                 <th class="object-title">
-                    {intl l='Action'}
+                    {intl l='gratisonlinealert.admin.action'}
                 </th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>
-                    {intl l="Event Propagation"}
+                    {intl l='gratisonlinealert.admin.event_propagation.title'}
                 </td>
                 <td>
-                    {intl l="Use it to stop create or update product if free"}
+                    {intl l='gratisonlinealert.admin.event_propagation.legend'}
                 </td>
                 <td class="actions">
                 <div class="btn-group">
@@ -35,10 +35,10 @@
                     <noscript>
                         {if $ACTIVATE}
                             <a title="{intl l="Deactivate event propagation"}"
-                               href="{url path="/admin/module/gratisonliealert/togglepropagation"}">{intl l="deactivation"}</a>
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation"}">{intl l='gratisonlinealert.admin.toggle_noscript.deactivation'}</a>
                         {else}
                             <a title="{intl l="activate event propagation"}"
-                               href="{url path="/admin/module/gratisonliealert/togglepropagation" id=$ID}">{intl l="activation"}</a>
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation" id=$ID}">{intl l='gratisonlinealert.admin.toggle_noscript.activation'}</a>
                         {/if}
                     </noscript>
                 </div>
@@ -46,10 +46,10 @@
             </tr>
             <tr>
                 <td>
-                    {intl l="Mail Alert"}
+                    {intl l='gratisonlinealert.admin.mail_alert.title'}
                 </td>
                 <td>
-                    {intl l="Use it to receive a mail alert"}
+                    {intl l='gratisonlinealert.admin.mail_alert.legend'}
                 </td>
                 <td class="actions">
                     <div class="btn-group">
@@ -62,10 +62,10 @@
                         <noscript>
                             {if $ACTIVATE}
                                 <a title="{intl l="Deactivate mail alert"}"
-                                   href="{url path="/admin/module/gratisonliealert/togglemail"}">{intl l="deactivation"}</a>
+                                   href="{url path="/admin/module/gratisonliealert/togglemail"}">{intl l='gratisonlinealert.admin.toggle_noscript.deactivation'}</a>
                             {else}
                                 <a title="{intl l="activate mail alert"}"
-                                   href="{url path="/admin/module/gratisonliealert/togglemail" id=$ID}">{intl l="activation"}</a>
+                                   href="{url path="/admin/module/gratisonliealert/togglemail" id=$ID}">{intl l='gratisonlinealert.admin.toggle_noscript.activation'}</a>
                             {/if}
                         </noscript>
                     </div>
