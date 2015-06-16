@@ -15,8 +15,6 @@
             url: url
         }).always(function () {
             $("#loading-event").remove();
-        }).done(function () {
-
         }).fail(function (jqXHR, textStatus, errorThrown) {
             checkbox.bootstrapSwitch('toggleState', true);
         });
@@ -36,8 +34,6 @@
             url: url
         }).always(function () {
             $("#loading-event").remove();
-        }).done(function () {
-
         }).fail(function (jqXHR, textStatus, errorThrown) {
             checkbox.bootstrapSwitch('toggleState', true);
         });
