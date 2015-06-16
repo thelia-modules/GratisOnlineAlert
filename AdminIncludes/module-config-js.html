@@ -1,0 +1,42 @@
+{javascripts file='assets/js/bootstrap-switch/bootstrap-switch.js'}
+    <script src="{$asset_url}"></script>
+{/javascripts}
+<script>
+    $(".prop-conf").on("switch-change", function (e, data) {
+
+        var checkbox = $(this);
+        var is_checked = data.value;
+        var modal = $("#response-modal");
+        $('body').append('<div class="modal-backdrop fade in" id="loading-event"><div class="loading"></div></div>');
+        var url = "{url path="/admin/module/gratisonliealert/togglepropagation"}";
+
+        $.ajax({
+            method: "POST",
+            url: url
+        }).always(function () {
+            $("#loading-event").remove();
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            checkbox.bootstrapSwitch('toggleState', true);
+        });
+
+    });
+
+    $(".mail-conf").on("switch-change", function (e, data) {
+
+        var checkbox = $(this);
+        var is_checked = data.value;
+        var modal = $("#response-modal");
+        $('body').append('<div class="modal-backdrop fade in" id="loading-event"><div class="loading"></div></div>');
+        var url = "{url path="/admin/module/gratisonliealert/togglemail"}";
+
+        $.ajax({
+            method: "POST",
+            url: url
+        }).always(function () {
+            $("#loading-event").remove();
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            checkbox.bootstrapSwitch('toggleState', true);
+        });
+
+    });
+</script>

@@ -1,0 +1,75 @@
+{default_translation_domain domain='gratisonlinealert.bo.default'}
+
+<div class="general-block-decorator">
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed" id="options_list">
+            <thead>
+            <tr>
+                <th class="object-title">
+                    {intl l='gratisonlinealert.admin.title'}
+                </th>
+                <th class="object-title">
+                    {intl l='gratisonlinealert.admin.description'}
+                </th>
+                <th class="object-title">
+                    {intl l='gratisonlinealert.admin.action'}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {intl l='gratisonlinealert.admin.event_propagation.title'}
+                </td>
+                <td>
+                    {intl l='gratisonlinealert.admin.event_propagation.legend'}
+                </td>
+                <td class="actions">
+                <div class="btn-group">
+                    <div class="make-switch switch-small module-activation prop-conf"
+                         data-on="success" data-off="danger"
+                         data-on-label="<i class='glyphicon glyphicon-ok-circle'></i>"
+                         data-off-label="<i class='glyphicon glyphicon-remove-circle'></i>">
+                        <input type="checkbox" {if {config key="gratisonlinealert.stop.propagation"}}checked{/if}>
+                    </div>
+                    <noscript>
+                        {if $ACTIVATE}
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation"}">{intl l='gratisonlinealert.admin.toggle_noscript.deactivation'}</a>
+                        {else}
+                            <a title="{intl l="activate event propagation"}"
+                               href="{url path="/admin/module/gratisonliealert/togglepropagation" id=$ID}">{intl l='gratisonlinealert.admin.toggle_noscript.activation'}</a>
+                        {/if}
+                    </noscript>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {intl l='gratisonlinealert.admin.mail_alert.title'}
+                </td>
+                <td>
+                    {intl l='gratisonlinealert.admin.mail_alert.legend'}
+                </td>
+                <td class="actions">
+                    <div class="btn-group">
+                        <div class="make-switch switch-small module-activation mail-conf"
+                             data-on="success" data-off="danger"
+                             data-on-label="<i class='glyphicon glyphicon-ok-circle'></i>"
+                             data-off-label="<i class='glyphicon glyphicon-remove-circle'></i>">
+                            <input type="checkbox" {if {config key="gratisonlinealert.send.mail"}}checked{/if}>
+                        </div>
+                        <noscript>
+                            {if $ACTIVATE}
+                                   href="{url path="/admin/module/gratisonliealert/togglemail"}">{intl l='gratisonlinealert.admin.toggle_noscript.deactivation'}</a>
+                            {else}
+                                <a title="{intl l="activate mail alert"}"
+                                   href="{url path="/admin/module/gratisonliealert/togglemail" id=$ID}">{intl l='gratisonlinealert.admin.toggle_noscript.activation'}</a>
+                            {/if}
+                        </noscript>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
